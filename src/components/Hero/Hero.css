@@ -1,0 +1,208 @@
+/* // Hero.css */
+
+.hero {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+.hero.no-padding {
+  margin-top: 0;
+  padding-top: 0;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* background: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.8) 0%,
+      rgba(0, 0, 0, 0) 100%
+    ); */
+  transition: opacity 0.5s ease-in-out;
+  z-index: 0;
+}
+
+.hero-image-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+.hero-content {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  background: rgba(
+    18,
+    18,
+    18,
+    0.4
+  ); /* This assumes Colors.primary.gray.neutral1100 with 67 opacity */
+  width: 60vw;
+  position: absolute;
+  bottom: 0;
+  padding: 20px 50px;
+  filter: blur(3px);
+}
+
+.hero-container {
+  width: 100vw;
+  padding: 160px 50px !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  background: rgba(
+    10,
+    10,
+    11,
+    0.3
+  ); /* This assumes Colors.primary.gray.neutral1100 with 67 opacity */
+  position: absolute;
+  bottom: 0;
+  backdrop-filter: blur(2px);
+}
+
+@media (max-width: 768px) {
+  .hero::before {
+    display: none; /* Remove gradient overlay on mobile */
+  }
+
+  .hero-container {
+    width: 100vw;
+    padding: 14px;
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0) 0%,
+      rgba(0, 0, 0, 0) 100%
+    );
+    backdrop-filter: none !important;
+  }
+}
+
+.hero-header {
+  font-size: 56px !important;
+  font-weight: 700 !important;
+  margin: 0;
+  line-height: 55px;
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    width: 100vw !important;
+    padding: 14px !important;
+  }
+
+  .hero-container {
+    width: 100vw;
+    padding: 14px !important;
+  }
+
+  .hero-header {
+    font-size: 32px !important;
+    font-weight: 400;
+    margin: 0;
+    line-height: 40px;
+  }
+}
+
+.hero-body {
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 1.5%;
+  margin: 0;
+}
+
+.button-wrapper {
+  margin-top: 20px;
+}
+
+.hero-button {
+  min-width: 200px;
+}
+
+.btn {
+  width: initial;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: 90vh !important;
+  }
+
+  .hero-header {
+    font-size: 32px;
+  }
+
+  .hero-body {
+    font-size: 14px;
+  }
+
+  .hero-content {
+    width: 100vw !important;
+    padding: 14px !important;
+  }
+
+  .hero-btn {
+    width: 100% !important;
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background-color: #fff;
+    padding: 16px;
+    border-radius: 8px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1300px) {
+  .hero {
+    height: 100vh !important;
+  }
+
+  .hero-content {
+    width: 70vw;
+    padding: 16px 30px;
+    backdrop-filter: blur(8px);
+  }
+
+  .hero-container {
+    min-width: 65vw;
+    padding: 16px 30px;
+  }
+
+  .faq-hero-container {
+    min-width: 65vw;
+    padding: 16px 30px;
+  }
+
+  .hero-header {
+    font-size: 44px !important;
+    line-height: 48px;
+  }
+}
+
+@media (min-width: 1104px) {
+  .hero {
+    height: 85vh;
+  }
+}
+
+.fade-out::before {
+  opacity: 0;
+}
+
+.fade-in::before {
+  opacity: 1;
+}
